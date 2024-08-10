@@ -5,6 +5,10 @@
 ## Project Structure
 ```css
 NameApp/
+├── gradle/
+│   ├── wrapper/
+│   │   ├── gradle-wrapper.jar
+│   │   └── gradle-wrapper.properties
 ├── src/
 │   ├── main/
 │   │   └── java/
@@ -18,7 +22,10 @@ NameApp/
 │   │       └── org/
 │   │           └── example/
 │   │               └── NameAppTest.java
-└── build.gradle
+├── build.gradle
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
 ```
 
 ## Dependencies
@@ -54,10 +61,9 @@ cd goit-academy-dev-hw01-gradle
 ```
 2. **Build the project**:
 ```shell
-gradle build
+./gradlew clean build
 ```
-
-This command compiles the source code, runs the tests, and packages the application into a fat JAR file named `myname.jar` located in the `build/libs` directory. The fat JAR will include all dependencies, making it easier to distribute and run the application without needing to manage the classpath.
+This command will use the gradle wrapper to ensure that the correct version of Gradle is used. It will clean any existing builds and then compiles the source code, runs the tests, and packages the application into a fat JAR file named `myname.jar` located in the `build/libs` directory. The fat JAR will include all dependencies, making it easier to distribute and run the application without needing to manage the classpath.
 
 ### Running the Application
 After creating the fat JAR, you can run the application using the following command:
